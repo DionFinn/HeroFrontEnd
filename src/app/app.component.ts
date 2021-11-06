@@ -7,4 +7,11 @@ import { Component, VERSION } from '@angular/core';
 })
 export class AppComponent  {
   name = 'Angular ' + VERSION.major;
+  // gameResultList: GameResult[] = [];
+  // heroList: Hero[] = [] 
+  //  constructor() { }
+   
+  //  ngOnInit() {
+  //   this.gameResultList.push({GameTime: new Date(), Winner: "Hero Win"})
+  //}
 }
