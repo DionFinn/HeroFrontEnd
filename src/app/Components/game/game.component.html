@@ -23,7 +23,9 @@ attacks
 <label *ngIf="selectedVillan">
 {{selectedVillan.VillanName}}
 </label>
+
 </p>
+<p>{{resultWinner}}</p>
 
 <button (click)="RollBtn()" [disabled]= "!(selectedHero && selectedVillan)" >Attack</button>
 <hr>

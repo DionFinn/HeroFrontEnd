@@ -20,9 +20,11 @@ export class GameComponent implements OnInit {
   resultList: Result [] = [{ GameTime: new Date, Winner: 'Villan Wins'}]
   selectedVillan: Villan;
   selectedHero: Hero;
-  
+  villansLost: boolean = false;
+  heroesLost: boolean = false;
   startBtnDisabled: boolean = false;
   rollBtnDisabled: boolean = true;
+  resultWinner: string;
   constructor() { }
 
   ngOnInit() {
@@ -47,10 +49,32 @@ export class GameComponent implements OnInit {
     this.selectedHero.Uses -= 1;
     this.selectedHero = null;
     this.selectedVillan = null;
+    this.villansLost = this.chkVillansLost();
+    this.heroesLost = this.chkHeroLost();
+    if(this.villansLost === true || this.heroesLost === true){
+      this.resultWinner = this.villansLost === false ? "Villans Won": "Heroes Won";
+    }
+
+
   }
 
-
-
+  chkVillansLost(): boolean{
+    for(let v of this.villanList){
+      if(v.AttackPoints > 0 ){
+        return false;
+      }
+    }
+    return true;
+  }
+  
+  chkHeroLost(): boolean{
+    for(let h of this.heroList){
+      if(h.Uses > 0){
+        return false;
+      }
+    }
+    return true;
+  }
 
   onSelectHero(hero: Hero){
     if(this.selectedHero === hero){
