@@ -3,14 +3,9 @@
   color: lightblue;
 }
 
-.heroBox {
+.gameRow {
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
 }
 
-.villanBox {
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
-}

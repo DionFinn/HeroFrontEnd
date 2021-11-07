@@ -20,16 +20,24 @@ export class GameComponent implements OnInit {
   resultList: Result [] = [{ GameTime: new Date, Winner: 'Villan Wins'}]
   selectedVillan: Villan;
   selectedHero: Hero;
-
+  startBtnDisabled: boolean = false;
+  rollBtnDisabled: boolean = true;
   constructor() { }
 
   ngOnInit() {
   }
+
   StartBtn(): void{
+    //disables startBtn
+    this.startBtnDisabled = true;
+    //loads heroes
+    //loads villians
+   
 
   }
+  
   RollBtn(): void{
-
+    
   }
 
   onSelectHero(hero: Hero){
