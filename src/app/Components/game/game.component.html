@@ -1,7 +1,14 @@
 <button (click)="StartBtn()">Start</button>
 <p>Select Hero</p>
+
+<app-hero *ngFor="let hero of heroList" [hero]="hero" (click)="onSelectHero(hero)"
+    [class.selected]="hero === selectedHero">
+</app-hero>
+
 <hr>
+
 <p>Select Villan</p>
+
 <hr>
 <button (click)="RollBtn()">Roll</button>
 <hr>
