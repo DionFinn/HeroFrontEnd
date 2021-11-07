@@ -3,6 +3,9 @@ import { Hero } from '../../Models/Hero';
 import { HeroComponent } from '../hero/hero.component';
 import { Villan } from '../../Models/Villan'
 import { VillanComponent } from '../villan/villan.component';
+import { Result } from '../../Models/Result';
+import { ResultComponent } from '../result/result.component';
+
 
 @Component({
   selector: 'app-game',
@@ -14,6 +17,7 @@ export class GameComponent implements OnInit {
                        {HeroID: 5, HeroName: "Dion", MinDice: 4, MaxDice: 6, Uses: 3}];
   villanList: Villan [] = [{VillanID: 2, VillanName: "Shano", AttackPoints: 5},
                            {VillanID: 3, VillanName: "NotBad", AttackPoints: 5}];
+  resultList: Result [] = [{ GameTime: new Date, Winner: 'Villan Wins'}]
   selectedVillan: Villan;
   selectedHero: Hero;
 

@@ -7,6 +7,7 @@ import { HelloComponent } from './hello.component';
 import { HeroComponent } from './Components/hero/hero.component';
 import { GameComponent } from './Components/game/game.component';
 import { VillanComponent } from './Components/villan/villan.component';
+import { ResultComponent } from './Components/result/result.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
@@ -14,7 +15,8 @@ import { VillanComponent } from './Components/villan/villan.component';
                   HelloComponent,
                   HeroComponent,
                   GameComponent,
-                  VillanComponent],
+                  VillanComponent,
+                  ResultComponent],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

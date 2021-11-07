@@ -2,3 +2,15 @@
   background-color: #cfd7dc !important;
   color: lightblue;
 }
+
+.heroBox {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+
+.villanBox {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
