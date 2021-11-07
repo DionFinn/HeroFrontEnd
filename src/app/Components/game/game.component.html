@@ -23,7 +23,7 @@
 </div>
 
 
-<button (click)="RollBtn()" [disabled]= "!selectedHero || !selectedVillan" >Roll</button>
+<button (click)="RollBtn()" [disabled]= "!(selectedHero && selectedVillan)" >Roll</button>
 <hr>
 
 <app-result *ngFor="let result of resultList" [result]="result"></app-result>
