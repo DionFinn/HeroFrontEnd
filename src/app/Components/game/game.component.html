@@ -10,20 +10,22 @@
 <p>Select Villan</p>
 <div class="gameRow">
 <app-villan *ngFor="let villan of villanList" [villan]="villan" (click)="onSelectVillan(villan)"
-    [class.selected]="villan === selectedVillan">
+    [class.selected]="villan === selectedVillan" [class.disabled]="villan.AttackPoints === 0">
 </app-villan>
 </div>
 
 <br>
-
-<div *ngIf="selectedHero">
+<p>
+<label *ngIf="selectedHero">
   {{selectedHero.HeroName}} 
-  attacks
-  {{selectedVillan.VillanName}}
-</div>
+</label>
+attacks
+<label *ngIf="selectedVillan">
+{{selectedVillan.VillanName}}
+</label>
+</p>
 
-
-<button (click)="RollBtn()" [disabled]= "!(selectedHero && selectedVillan)" >Roll</button>
+<button (click)="RollBtn()" [disabled]= "!(selectedHero && selectedVillan)" >Attack</button>
 <hr>
 
 <app-result *ngFor="let result of resultList" [result]="result"></app-result>

@@ -2,7 +2,11 @@
   background-color: #cfd7dc !important;
   color: lightblue;
 }
-
+.disabled {
+  pointer-events: none;
+  opacity: 50%;
+  background-color: darkgray;
+}
 .gameRow {
   display: flex;
   flex-direction: row;
