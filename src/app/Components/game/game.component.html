@@ -15,7 +15,15 @@
 </div>
 
 <br>
-<button (click)="RollBtn()" [disabled]="rollBtnDisabled">Roll</button>
+
+<div *ngIf="selectedHero">
+  {{selectedHero.HeroName}} 
+  attacks
+  {{selectedVillan.VillanName}}
+</div>
+
+
+<button (click)="RollBtn()" [disabled]= "!selectedHero || !selectedVillan" >Roll</button>
 <hr>
 
 <app-result *ngFor="let result of resultList" [result]="result"></app-result>

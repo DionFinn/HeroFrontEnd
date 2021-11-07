@@ -20,6 +20,7 @@ export class GameComponent implements OnInit {
   resultList: Result [] = [{ GameTime: new Date, Winner: 'Villan Wins'}]
   selectedVillan: Villan;
   selectedHero: Hero;
+  
   startBtnDisabled: boolean = false;
   rollBtnDisabled: boolean = true;
   constructor() { }
@@ -32,20 +33,31 @@ export class GameComponent implements OnInit {
     this.startBtnDisabled = true;
     //loads heroes
     //loads villians
-   
-
   }
-  
+
   RollBtn(): void{
     
   }
 
+
   onSelectHero(hero: Hero){
-    this.selectedHero = hero;
+    this.selectedHero = hero; 
   }
+
+
 
   onSelectVillan(villan: Villan){
     this.selectedVillan = villan
   }
 
 }
+
+/*Hero section
+disabled when users = 0
+mouse over greys out 
+selects highlights 
+disables other selected (only select when uses is greater than 0)
+when Uses zero disabled
+*/
+
+
