@@ -8,7 +8,9 @@
 <hr>
 
 <p>Select Villan</p>
-
+<app-villan *ngFor="let villan of villanList" [villan]="villan" (click)="onSelectVillan(villan)"
+    [class.selected]="villan === selectedVillan">
+</app-villan>
 <hr>
 <button (click)="RollBtn()">Roll</button>
 <hr>
