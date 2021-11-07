@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Result } from '../../Models/Result';
 
 
@@ -8,7 +8,7 @@ import { Result } from '../../Models/Result';
   styleUrls: ['./result.component.css']
 })
 export class ResultComponent implements OnInit {
-  result: Result;
+  @Input() result: Result;
   constructor() { }
 
   ngOnInit() {

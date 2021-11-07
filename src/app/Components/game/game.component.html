@@ -13,7 +13,9 @@
     [class.selected]="villan === selectedVillan" class="villanBox">
 </app-villan>
 <div>
-<p></p>
+
 <br>
 <button (click)="RollBtn()">Roll</button>
 <hr>
+
+<app-result *ngFor="let result of resultList" [result]="result"></app-result>
