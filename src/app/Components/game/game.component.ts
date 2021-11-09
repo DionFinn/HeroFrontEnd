@@ -5,6 +5,7 @@ import { Villan } from '../../Models/Villan'
 import { VillanComponent } from '../villan/villan.component';
 import { Result } from '../../Models/Result';
 import { ResultComponent } from '../result/result.component';
+import { HeroService } from '../../Services/hero.service';
 
 
 @Component({
@@ -25,9 +26,10 @@ export class GameComponent implements OnInit {
   startBtnDisabled: boolean = false;
   rollBtnDisabled: boolean = true;
   resultWinner: string;
-  constructor() { }
+  constructor(private heroService: HeroService) { }
 
-  ngOnInit() {
+  ngOnInit(): void{
+    this.heroService.getAllHeroes().subscribe
   }
 
   StartBtn(): void{
