@@ -10,7 +10,7 @@
 <p>Select Villan</p>
 <div class="gameRow">
 <app-villan *ngFor="let villan of villanList" [villan]="villan" (click)="onSelectVillan(villan)"
-    [class.selected]="villan === selectedVillan" [class.disabled]="villan.AttackPoints === 0">
+    [class.enemy]="villan === selectedVillan" [class.disabled]="villan.AttackPoints === 0">
 </app-villan>
 </div>
 

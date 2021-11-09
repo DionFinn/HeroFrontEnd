@@ -14,7 +14,7 @@ import { ResultComponent } from '../result/result.component';
 })
 export class GameComponent implements OnInit {
   heroList: Hero [] = [{HeroID: 5, HeroName: "Dion", MinDice: 1, MaxDice: 6, Uses: 3}, 
-                       {HeroID: 5, HeroName: "Dion", MinDice: 1, MaxDice: 6, Uses: 3}];
+                       {HeroID: 5, HeroName: "Anh", MinDice: 1, MaxDice: 3, Uses: 3}];
   villanList: Villan [] = [{VillanID: 2, VillanName: "Shano", AttackPoints: 5},
                            {VillanID: 3, VillanName: "NotBad", AttackPoints: 5}];
   resultList: Result [] = [{ GameTime: new Date, Winner: 'Villan Wins'}]
