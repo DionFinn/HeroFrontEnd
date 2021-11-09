@@ -6,6 +6,8 @@ import { VillanComponent } from '../villan/villan.component';
 import { Result } from '../../Models/Result';
 import { ResultComponent } from '../result/result.component';
 import { HeroService } from '../../Services/hero.service';
+import { VillanService } from '../../Services/villan.service';
+import { GameService } from '../../Services/game.service';
 import { error } from '@angular/compiler/src/util';
 
 
@@ -27,12 +29,20 @@ export class GameComponent implements OnInit {
   startBtnDisabled: boolean = false;
   rollBtnDisabled: boolean = true;
   resultWinner: string;
-  constructor(private heroService: HeroService) { }
+  constructor(private heroService: HeroService, 
+              private villanService: VillanService, 
+              private gameService: GameService) { }
 
   ngOnInit(): void{
-    this.heroService.getAllHeroes().subscribe(heroes => this.heroList = heroes, error =>
-      console.log("error getAllHeroes()" + error));
+    this.heroService.getAllHeroes().subscribe(hero => this.heroList = hero, error =>
+      console.log("error getAllHeroes()" + error),() => { this.init() });
+    this.villanService.getAllVillains().subscribe(villan => this.villanList = villan, error =>
+      console.log("error getALlVillains()" + error),() => { this.init() });
+    this.gameService.getAllGames().subscribe(game => this.resultList = game, error => 
+      console.log("error in getAllGames()" + error), () => { this.init() });
   }
+
+
 
   StartBtn(): void{
     //disables startBtn
@@ -78,6 +88,7 @@ export class GameComponent implements OnInit {
       }
     }
     return true;
+    
   }
 
   onSelectHero(hero: Hero){
@@ -110,7 +121,18 @@ export class GameComponent implements OnInit {
     console.log(roll);
     return roll;
   }
+
+  init(): void {
+   if(this.heroList != null){
+     this.selectedHero = this.heroList[0];
+    if (this.villanList != null) {
+      this.selectedVillan = this.villanList[0];
+    }
+   }
+  }
+  
 }
+
 
 
 /*Hero section
