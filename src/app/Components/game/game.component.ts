@@ -6,6 +6,7 @@ import { VillanComponent } from '../villan/villan.component';
 import { Result } from '../../Models/Result';
 import { ResultComponent } from '../result/result.component';
 import { HeroService } from '../../Services/hero.service';
+import { error } from '@angular/compiler/src/util';
 
 
 @Component({
@@ -29,7 +30,8 @@ export class GameComponent implements OnInit {
   constructor(private heroService: HeroService) { }
 
   ngOnInit(): void{
-    this.heroService.getAllHeroes().subscribe
+    this.heroService.getAllHeroes().subscribe(heroes => this.heroList = heroes, error =>
+      console.log("error getAllHeroes()" + error));
   }
 
   StartBtn(): void{
