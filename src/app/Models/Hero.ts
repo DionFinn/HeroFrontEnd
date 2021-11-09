@@ -1,9 +1,9 @@
 export interface HeroImport {
-  id: number;
-  name: string;
-  minRoll: number;
-  maxRoll: number;
-  startingUses: number;
+  HeroID: number;
+  HeroName: string;
+  MinDice: number;
+  MaxDice: number
+  Uses: number;
 }
 
 

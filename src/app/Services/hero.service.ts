@@ -15,6 +15,6 @@ export class HeroService extends BaseService {
   }
 
   getAllHeroes(): Observable<Hero[]> {
-    return this._http.get<HeroImport[]>(this.baseUrl + "Hero").pipe(map(heroDataArray => heroDataArray.map(HeroImport => new Hero(HeroImport))));
+    return this._http.get<HeroImport[]>(this.baseUrl + "Hero").pipe(map(heroData => heroData.map(HeroImport => new Hero(HeroImport))));
   }
 }
