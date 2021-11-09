@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export abstract class BaseService {
-  readonly baseUrl: string = "http://stavkyriacou.somee.com/HeroAPI/";
+  readonly baseUrl: string = "http://DionFinnerty.somee.com/HeroGame/";
 
   constructor() { }
 }
